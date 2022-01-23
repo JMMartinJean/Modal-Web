@@ -28,7 +28,7 @@ FIN_TITRE;
 
 function article_likes() {
     echo '<img src="images/like_empty.png" class="col-1" id = "like" alt="like">';
-    echo '<script src="js/like.js"></script>';
+    //echo '<script src="js/like.js"></script>';
 }
 
 function generateCommentForm($idArticle) {
@@ -49,26 +49,41 @@ FIN_FORM;
     }
 }
 
-function generateComments($bdd, $idArticle) {
-    echo '<div class="container-fluid" style="margin-top:20px">';
-    $req = $bdd->prepare(""
-            . "SELECT *,DATE_FORMAT(date_release, ' - Le %d/%m/%Y à %Hh%i') as my_date "
+function generateComments($bdd, $idArticle, $page) { //!\ CETTE FONCTION PREND $bdd EN PARAMETRES CAR ELLE SERA APPELLEE DYNAMIQUEMENT
+    $nb_comms_par_page = 5;
+    
+    echo '<div class="container-fluid" style="margin-top:20px" id="commentaires">';
+    $offset = 0;
+    if (is_int($page) && $page > 0) {
+        $offset = $nb_comms_par_page*$page;
+    }    
+    $req = $bdd->prepare(
+              "SELECT *,DATE_FORMAT(date_release, ' - Le %d/%m/%Y à %Hh%i') as my_date "
             . "FROM comments JOIN users ON users.id = comments.id_auteur "
-            . "WHERE comments.id_article = ?"
-            . "ORDER BY date_release ASC");
+            . "WHERE comments.id_article = ? "
+            . "ORDER BY date_release ASC "
+            . "LIMIT 11 OFFSET " . $offset); //LIMIT 11 pour en prendre 1 après (sous reserve d'existence)
+                                             //Malheureusement OFFSET ne peut pas être suivi d'un '?'
     $req->execute(array($idArticle));
-    if ($req->rowCount() == 0) {
+    $nb_comms = $req->rowCount();
+    if ($nb_comms == 0) {
         echo '
         <p><em>Il n\'y a pas de commentaire pour l\'instant. <br>
             <a href="#newCom">Soyez le premier à réagir !</a>
         </em></p>';
     } else {
+        $i = 0;
         while ($com = $req->fetch()) {
-            echo '<p><strong>'
-            . htmlspecialchars($com['username']) . htmlspecialchars($com['my_date']) . '</strong><br>'
-            . nl2br(htmlspecialchars($com['content']))
-            . '</p>';
+            if ($i < $nb_comms_par_page) {
+                echo '<p><strong>'
+                . htmlspecialchars($com['username']) . htmlspecialchars($com['my_date']) . '</strong><br>'
+                . nl2br(htmlspecialchars($com['content']))
+                . '</p>';
+            }
+            $i++;
         }
+        echo '<button data-idarticle = "' . $idArticle . '" data-page="' .($page-1) . '" class="navigate"'. ($page == 0 ? 'disabled':'') . '>Précédent</button>';
+        echo '<button data-idarticle = "' . $idArticle . '" data-page="' .($page+1) . '" class="navigate"' . ($i <= $nb_comms_par_page ? 'disabled':'') . '>Suivant</button>';        
     }
     echo '</div>';
 }

@@ -10,16 +10,13 @@ try {
 function saveCom($idArticle, $content) {
     global $bdd;
     if (isLoggedIn()) {
-        $req = $bdd->prepare('SELECT ID FROM users WHERE username=?');
-        $req->execute(array($_SESSION['username']));
-        if ($req->rowCount() != 1 || $_GET['article'] != $idArticle) {
-            addAlert(ErrorMsgOnPost(), 'error'); //!\ je n'ai jamais testé cette ligne
-        } else {
-            $id_auteur = $req->fetch()['ID'];
-            $req = $bdd->prepare('INSERT INTO comments (ID, id_auteur, id_article, date_release, content) VALUES (NULL, ?, ?, NOW(), ?)');
-            $req->execute(array($id_auteur, $idArticle, $content));
-        }
+        $req = $bdd->prepare('INSERT INTO comments (ID, id_auteur, id_article, date_release, content) VALUES (NULL, ?, ?, NOW(), ?)');
+        $req->execute(array($_SESSION['userid'], $idArticle, $content));
     }
+}
+
+function checkComReceive($tab) {
+    return array_key_exists('id_article', $tab) && array_key_exists('content', $tab);
 }
 
 function runBefore() {
@@ -45,13 +42,11 @@ function runCore() {
         echo '<div class="container-fluid" style="margin-top:40px">';
         echo '<h2>Commentaires</h2>';
         generateCommentForm($idArticle);
-        generateComments($bdd, $idArticle);
+        generateComments($bdd, $idArticle, 0);
         echo '</div>';
     } else {
         echo errorMsg();
     }
 }
 
-function checkComReceive($tab) {
-    return array_key_exists('id_article', $tab) && array_key_exists('content', $tab);
-}
+
