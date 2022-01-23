@@ -26,8 +26,19 @@ function article_title($titre, $username, $last_maj) {
 FIN_TITRE;
 }
 
-function article_likes() {
-    echo '<img src="images/like_empty.png" class="col-1" id = "like" alt="like">';
+function article_likes($idArticle) {
+    global $bdd;
+    $req = $bdd->prepare("SELECT * FROM likes WHERE id_likeur = ? AND id_article = ?");
+    $req->execute(array($_SESSION['userid'], $idArticle));
+    
+    echo '<div class="col-2" style="padding-right:0px">';
+    echo '<img src="images/'. ($req->rowCount()==0 ? 'like_empty':'like_full') . '.png" '
+            . 'id = "like" '
+            . 'alt="like" '
+            . 'data-id_article='. $idArticle
+        .'>';
+    echo '<div id="debug"></div>';
+    echo '</div>';
     //echo '<script src="js/like.js"></script>';
 }
 
