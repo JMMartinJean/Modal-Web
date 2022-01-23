@@ -24,7 +24,8 @@ $pageList = array(
     ),
     'read' => array(
         'title' => 'Le kI', //Le titre de la page dépend de l'article lu ! Donc je ne mets rien ici
-        'auth' => $connected
+        'auth' => $connected,
+        'script' => array('js/js_read.js', 'js/like.js'),
     ),
     'unlog' => array(
         'title' => 'Le kI - Se connecter',
@@ -42,7 +43,7 @@ $pageList = array(
     'review-article' => array(
         'title' => 'Le kI - Relecture d\'un article',
         'auth' => array('admin'),
-        'script' => array(
+        'script' => array(//définir un ordre permet d'être sûr que les scripts sont insérés dans le bon ordre
             '0' => 'https://cdn.tiny.cloud/1/zjkdssckeizytqdo5av8o6dm2dtceccuhey77jmblx6l0lnb/tinymce/5/tinymce.min.js" referrerpolicy="origin',
             '1' => 'js/fr_FR.js',
             '2' => 'js/js_review-article.js',

@@ -42,7 +42,6 @@ if (pageExists($askedPage)) {
     generateUnknownPage();
 }
 
-$bdd->close();
 
 /*switch ($askedPage) {
     case 'admin': require('utilities/utils_admin.php'); runAdmin(); break;
@@ -64,8 +63,11 @@ $bdd->close();
  *      CHANGEMENTS MINEURS
  * Bouton de navigation pour afficher les articles suivants (main)
  * Bouton de navigation pour les commentaires (read)
- * 
- *      CHANGEMENTS RECENTS
+ *  */
+
+
+
+/* CHANGEMENTS RECENTS
  * Espace commentaire sous les articles (read)
  * Ajouter une photo à ses articles (write-article)
- *  */
+ */
