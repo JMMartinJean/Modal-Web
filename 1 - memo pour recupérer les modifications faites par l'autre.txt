@@ -1,0 +1,4 @@
+Depuis GitBash, aller sur le dossier local, ex chez moi :
+$ cd C:\xampp\htdocs\ModalWEB\PROJETKI
+
+$ git pull ModalWebKi main

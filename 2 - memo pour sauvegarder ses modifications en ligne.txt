@@ -1,0 +1,40 @@
+Qd on veut faire une modification quelconque, qu'elle consiste en :
+- l'implémentation d'une fonctionnalité
+- la modification de l'organisation d'une page
+- ...
+(n'importe quoi, sauf la modification de la BDD)
+
+On travaille en LOCAL. Une fois toutes les modifications terminées,
+il faut suivre la procédure suivante
+
+0) ALLER SUR LE DEPOT LOCAL
+Depuis GitBash, aller sur le dossier local, ex chez moi :
+$ cd C:\xampp\htdocs\ModalWEB\PROJETKI
+
+1) CREER UNE NOUVELLE BRANCHE
+Supposons par exemple qu'on ajoute la fonctionnalité "navigation dans les commentaires"
+Je vais appeller la branche nav_comm_ajax
+$ git branch nav_comm_ajax
+$ git checkout nav_comm_ajax
+
+
+2) ENVOYER LES FICHIERS MODIFIES
+Supposons par ex qu'on ait modifié le fichier
+content/content_read.php
+Voici comment enregistrer les modifications sur le repo en ligne
+
+Dans tous les cas :
+$ git add content/content_read.php
+$ git commit -m "Navigation rapide dans les commentaires avec AJAX"
+$ git push origin nav_comm_ajax
+Réaliser ces étapes pour tous les fichiers modifiés
+
+3) DEMANDER A FUSIONNER LES BRANCHES
+Aller sur GitBash et essayer de trouver un bouton "pull request" sur la branche nav_comm_ajax.
+
+4) FUSIONNER LES BRANCHES ?
+$ git checkout main
+$ git merge nav_comm_ajax
+
+
+

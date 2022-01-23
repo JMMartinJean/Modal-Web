@@ -1,0 +1,10 @@
+Depuis GitBash, aller sur le dossier local, ex chez moi :
+$ cd C:\xampp\htdocs\ModalWEB\PROJETKI
+
+Puis :
+$ git clone https://github.com/JMMartinJean/Modal-Web.git
+$ git remote add ModalWebKi
+
+
+
+
