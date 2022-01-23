@@ -1,0 +1,136 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26 nov. 2021, 17:19:01
+    Author     : armen
+*/
+body {
+    font: caption;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+#login-main {
+    background-color: rgb(75,75,255);
+    border-radius: 30px;
+    margin-top: 150px;
+    text-align: center;
+}
+
+#new-acc-main {
+    background-color: rgb(155,155,255);
+    border-radius: 30px;
+    margin-top: 150px;
+    text-align: center;
+}
+
+#navbarContent {
+    color: white;
+}
+
+#messagePassw {
+    color: rgb(100,100,0);
+    margin: 1px;
+}
+
+.successmsg {
+    color: green;
+    font-style: italic;
+}
+.errormsg {
+    color: red;
+    font-style: italic;
+}
+
+#mainNav {
+    margin-bottom: 20px;
+    margin-left:0px;
+    background-color: green;
+}
+
+#titreSite {
+    font: 35px serif;
+    margin-left:10px;
+    margin-right:10px;
+    padding-right: 10px;
+    border-right: solid gray 1px;
+}
+
+#alaune {
+    border-right: solid 1px;
+}
+
+#main_top {
+    border-bottom: solid 2px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+#userOptions {
+    background: white;
+    border: none;
+    margin-right: 5px;
+    color: black;
+}
+
+.softUnderline {
+    text-decoration: none;
+    color: black;
+}
+.softUnderline:hover {
+    border-bottom: solid 1px;
+}
+
+/* Relatif à la Une */
+#imgUne {
+    width: 100%;
+}
+#titreUne {
+    font: 30px sans-serif;
+    font-weight: 800;
+    border: solid black 2px;
+    padding: 5px;
+}
+
+
+/* Relatif à la rubrique Populaires */
+.imgPop {
+    border-right: solid gray 1px;
+    height: 100%;
+}
+.titrePop {
+    font: 20px sans-serif;
+    font-weight: 500;
+    padding: 3px;
+    width: 100%;
+    margin-bottom: 0px;
+}
+.contenuPop {
+    font: 15px sans-serif;
+    font-weight: 100;
+    padding: 10px;
+    padding-top:3px;
+    margin: 3px;
+    width: 100%;
+}
+.articlesPop {
+    height: 85px;
+}
+
+/* Relatif à la rubrique Tous */
+#main_all {
+    margin: 5px;
+}
+
+#like {
+    margin: 5px;
+    padding: 0px;
+    border: solid gray 1px;
+    width: auto;
+}
+
