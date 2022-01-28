@@ -38,25 +38,37 @@ function printArticles() {
 function generateForm_upgrade() {
     echo <<<FIN_FORM
     <form method="post" action="index.php?page=my-space">
-        <label>Votre nom (pas de pseudo) : </label>
+        <label>Votre vrai nom : </label>
         <input type="text" name="nom"><br>
         
         <label>Votre promotion : </label>
-        <input name="promo" placeholder="X2020" style="width:58px"><br><br>
+        <input name="promo" placeholder="X2020" style="width:58px" type="text"><br><br>
     
         <label>Un petit texte de motivation?</label><br>
-        <textarea style="width:50%; resize:vertical"></textarea><br>
+        <textarea name="motivation" style="width:50%; resize:vertical"></textarea><br>
+    
+        <input type="submit" value="Soumettre la demande"><br><br>
     </form>
     FIN_FORM;
 }
 
 function printUpgrade() {
+    global $bdd;
+    
     echo '<div class="container-fluid"><h3>Améliorer son compte</h3>';
-    echo 'Vous êtes actuellement ' . $_SESSION['usertype'];
-    $newtype = 'journaliste';
-    if ($_SESSION['usertype'] == $newtype) {
-        $newtype = 'admin';
+    echo 'Vous êtes actuellement ' . $_SESSION['usertype'] . '.<br>';
+    
+    $req = $bdd->prepare('SELECT ID, type_demande FROM upgrade_requests WHERE id_user = ?');
+    $req->execute(array($_SESSION['userid']));
+    if ($req->rowCount() > 0) {
+        echo '<p><em>Vous avez une demande en cours pour devenir ' . $req->fetch()['type_demande'] . '.</em></p>';
     }
-    echo 'Remplissez le formulaire ci-dessous pour devenir ' . $newtype . ' !';
-    generateForm_upgrade($newtype);
+    else {
+        $newtype = 'journaliste';
+        if ($_SESSION['usertype'] == $newtype) {
+            $newtype = 'admin';
+        }
+        echo 'Remplissez le formulaire ci-dessous pour devenir ' . $newtype . ' !';
+        generateForm_upgrade();
+    }
 }
