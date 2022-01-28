@@ -1,17 +1,29 @@
 <?php
 
+function displayUserRequest($user) {
+    echo '<li><b>' . htmlspecialchars($user['nom']) . ' (promo ' . htmlspecialchars($user['promo']) .'), sous le pseudo '
+    . htmlspecialchars($user['username']) . '</b> (' . $user['type'] . ') demande à devenir ' . $user['type_demande'] . '<br>';
+    echo '<b>Motivation :</b><p style="font:13px italic; margin-bottom:0px">' . htmlspecialchars($user['motivation']) . '</p>';
+    
+    echo '<a style="color:lightgreen" href="index.php?page=admin&id=' . $user['id'] . '&nvtype=' . $user['type_demande'] . '">Accepter</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+    echo '<a style="color:red" href="index.php?page=admin&id=' . $user['id'] . '&nvtype=' . $user['type'] . '">Refuser</a></li>';
+}
+
+
 function usersToUpgrade() {
     global $bdd;
-    $req = $bdd->prepare('SELECT id, username, type, type_demande FROM users WHERE type != type_demande');
+    $req = $bdd->prepare(''
+        . 'SELECT users.id, promo, nom, username, type, type_demande, motivation '
+        . 'FROM users JOIN upgrade_requests '
+        . 'ON users.id = upgrade_requests.id_user '
+    );
     $req->execute();
     if ($req->rowCount() == 0) {
         echo '<p style="color:green"><em>Aucun utilisateur n\'a une demande en attente</em></p>';
     } else {
         echo '<div>Liste des utilisateurs ayant fait une demande d\'amélioration:<ul>';
         while ($user = $req->fetch()) {
-            echo '<li><b>' . htmlspecialchars($user['username']) . '</b> (' . $user['type'] . ') - Demande à devenir ' . $user['type_demande'] . '<br>';
-            echo '<a style="color:lightgreen" href="index.php?page=admin&id=' . $user['id'] . '&nvtype=' . $user['type_demande'] . '">Accepter</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-            echo '<a style="color:red" href="index.php?page=admin&id=' . $user['id'] . '&nvtype=' . $user['type'] . '">Refuser</a></li>';
+            displayUserRequest($user);
         }
         echo '</ul></div>';
     }

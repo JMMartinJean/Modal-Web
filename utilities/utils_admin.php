@@ -3,8 +3,11 @@
 function do_changeUserStatus($idUser, $nvtype) {
     global $bdd;
     if (($nvtype == 'admin' || $nvtype == 'journaliste' || $nvtype == 'visiteur') && is_numeric($idUser)) {
-        $req = $bdd->prepare("UPDATE `users` SET `type` = ?, `type_demande` = ? WHERE `users`.`ID` = ?");
-        $req->execute(array($nvtype, $nvtype, intval($idUser)));
+        $req = $bdd->prepare("UPDATE `users` SET `type` = ? WHERE `users`.`ID` = ?");
+        $req->execute(array($nvtype, $idUser));
+        
+        $req = $bdd->prepare("DELETE FROM upgrade_requests WHERE id_user = ?");
+        $req->execute(array($idUser));
 
         addAlert('L\'utilisateur a bien été nommé ' . $nvtype, 'success');
         return 1;
