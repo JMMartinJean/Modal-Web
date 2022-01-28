@@ -40,7 +40,7 @@ function delete_like($idLikeur, $idArticle) {
     $req->execute(array($idLikeur, $idArticle));
     
     if ($req->rowCount() > 0) {
-        $req = $bdd->prepare('UPDATE `articles` SET `nb_like` = nb_like + 1 WHERE `articles`.`ID` = ?');
+        $req = $bdd->prepare('UPDATE `articles` SET `nb_like` = nb_like - 1 WHERE `articles`.`ID` = ?');
         $req->execute(array($idArticle));
         addAlert('Article retiré de mes likes', 'success');
     }
