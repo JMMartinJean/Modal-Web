@@ -43,22 +43,11 @@ if (pageExists($askedPage)) {
 }
 
 
-/*switch ($askedPage) {
-    case 'admin': require('utilities/utils_admin.php'); runAdmin(); break;
-    case 'login': require('utilities/utils_login.php');runLogin(); break;
-    case 'main': require('utilities/utils_main.php'); runMain(); break;
-    case 'new-account': require('utilities/utils_new-account.php');runNewAccount; break;
-    case 'read': require('utilities/utils_read.php');runRead(); break;
-    case 'unlog': require('utilities/utils_unlog.php');runUnlog(); break;
-    case 'write-article': require('utilities/utils_write-article.php');runWriteArticle(); break;
-    default: runUnknown(); break;
-}*/
 
 /* TODO
  *      FONCTIONALITES
- * Espace visiteur/journalistes (voir ses likes, ses articles, les modifier (my-space)
  * Espace compte (modifier mdp & nom d'utilisateur)
- * Système de like (read)
+ * Page pour modifier ses articles
  * 
  *      CHANGEMENTS MINEURS
  * Bouton de navigation pour afficher les articles suivants (main)
@@ -70,4 +59,6 @@ if (pageExists($askedPage)) {
 /* CHANGEMENTS RECENTS
  * Espace commentaire sous les articles (read)
  * Ajouter une photo à ses articles (write-article)
+ * Espace visiteur/journalistes (voir ses likes, ses articles, les modifier) (my-space)
+ * Système de like (read)
  */

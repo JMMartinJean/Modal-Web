@@ -13,8 +13,13 @@ function printArticles() {
     } else {
         echo '<ul>';
         while ($article = $req->fetch()) {
-            echo '<li><a href="index.php?page=read&article=' . $article['ID'] . '">'
-            . htmlspecialchars($article['titre']) . '</a>' . $article['my_date'];
+            if ($article['statut'] === 'valide') {
+                echo '<li><a href="index.php?page=read&article=' . $article['ID'] . '">'
+                    . htmlspecialchars($article['titre']) . '</a>' . $article['my_date'];
+            }
+            else {
+                echo '<li>' . htmlspecialchars($article['titre']) . $article['my_date'];
+            }
             switch($article['statut']) {
                 case 'valide':
                     echo ' [article publié] (' . $article['nb_like'] . ' likes)<br>';

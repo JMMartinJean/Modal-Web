@@ -24,7 +24,7 @@ function runCore() {
     if ($_SESSION['usertype'] != 'admin') {
         printUpgrade();
     }
-    if ($_SESSION['usertype'] != 'visitor') {
+    if ($_SESSION['usertype'] != 'visiteur') {
         printArticles();
     }
 }

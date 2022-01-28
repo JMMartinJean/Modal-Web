@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 28 jan. 2022 à 14:19
+-- Généré le : ven. 28 jan. 2022 à 17:28
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.1.1
 
@@ -44,7 +44,7 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`ID`, `id_auteur`, `titre`, `contenu`, `image`, `statut`, `parution`, `maj`, `nb_like`) VALUES
-(1, 1, 'Création du binet kI', 'Le binet kI est au binet iK ce que Le Gorafi est au Figaro, c\'est-à-dire une parodie amusante qui utilise l\'humour pour faire rire ses lecteurs.\r\n\r\nC\'est un journal collaboratif, écrit par ses reporters. N\'importe qui peut faire une demande aux administrateurs pour devenir reporter - dégainez votre plume et rejoignez-nous !', 'img_kI', 'valide', '2021-12-17 14:39:45', '2021-12-17 14:39:45', 1),
+(1, 1, 'Création du binet kI', 'Le binet kI est au binet iK ce que Le Gorafi est au Figaro, c\'est-à-dire une parodie amusante qui utilise l\'humour pour faire rire ses lecteurs.\r\n\r\nC\'est un journal collaboratif, écrit par ses reporters. N\'importe qui peut faire une demande aux administrateurs pour devenir reporter - dégainez votre plume et rejoignez-nous !', 'img_kI', 'valide', '2021-12-17 14:39:45', '2021-12-17 14:39:45', 2),
 (2, 1, 'Un deuxième article !', 'Et de deux.\r\nDeux, c\'est mieux que un, mais toujours moins que le nombre d\'articles par iK.\r\n\r\nJ\'appelle donc tous les journalistes du site à se mobiliser pour en avoir plein !\r\n\r\nCa rendra le site plus intéressant. En effet, la section \"populaire\" doit faire une liste de 5 articles, donc bon...', 'img_kI', 'valide', '2021-12-17 15:53:17', '2021-12-17 15:53:17', 0),
 (3, 4, 'Le binet kI grandit !', '<p>Le binet kI se d&eacute;veloppe. Pour la premi&egrave;re fois, un article a &eacute;t&eacute; soumis depuis le site du binet ! C\'est une grande nouvelle pour la libert&eacute; d\'expression &agrave; l\'X. Pour publier dans l\'iK, les X doivent suivre une proc&eacute;dure tr&egrave;s tr&egrave;s compliqu&eacute;e pleines d\'emb&ucirc;ches :</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;- &eacute;crire un article sur un doc Word</p>\r\n<p>&nbsp;- se connecter sur Zimbra ou sur toute autre bo&icirc;te mail</p>\r\n<p>&nbsp;- chercher le mail du binet iK ou du kessier iK</p>\r\n<p>&nbsp;- &eacute;crire un mail expliquant qu\'on veut publier un article dans l\'iK</p>\r\n<p>&nbsp;- mettre en PJ l\'article qu\'on veut mettre</p>\r\n<p>&nbsp;- recevoir une r&eacute;ponse du binet iK qui demande de corriger des fautes d\'orthographe</p>\r\n<p>&nbsp;- corriger les fautes</p>\r\n<p>&nbsp;-&nbsp; &nbsp;recommencer &agrave; partir de l\'&eacute;tape 2</p>\r\n<p>&nbsp;- ...</p>\r\n<p>&nbsp;</p>\r\n<p>C\'est long et compliqu&eacute; ! Tandis que sur le site du kI, c\'est beaucoup plus simple ! Si vous &ecirc;tes journaliste, il suffira d\'UNE SEULE &eacute;tape :</p>\r\n<p>&nbsp;- vous vous connectez ; vous cliquez sur \"&eacute;crire un article\" ; vous l\'&eacute;crivez ; vous le soumettez !</p>\r\n<p>&nbsp;</p>\r\n<p>Et si vous n\'&ecirc;tes encore que simple visiteur, pas de panique. Deux &eacute;tapes suffiront pour devenir journaliste :</p>\r\n<p>&nbsp;- se connecter</p>\r\n<p>&nbsp;- cliquer sur \"Devenir journaliste\" et suivre la proc&eacute;dure qui s\'affiche &agrave; l\'&eacute;cran</p>\r\n<p>Encore une fois, simple comme bonjour. Alors,&nbsp;<strong>n\'h&eacute;sitez plus :</strong></p>\r\n<p><span style=\"font-size: 24pt;\">DEVENEZ JOURNALISTE kI</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>', 'img_kI', 'valide', '2021-12-22 11:09:18', '2021-12-22 16:19:44', 0),
 (4, 4, 'Le binet kI grandit !', '<p>Le binet kI se d&eacute;veloppe. Pour la premi&egrave;re fois, un article a &eacute;t&eacute; soumis depuis le site du binet ! C\'est une grande nouvelle pour la libert&eacute; d\'expression &agrave; l\'X. Pour publier dans l\'iK, les X doivent suivre une proc&eacute;dure tr&egrave;s tr&egrave;s compliqu&eacute;e pleines d\'emb&ucirc;ches :</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;- &eacute;crire un article sur un doc Word</p>\r\n<p>&nbsp;- se connecter sur Zimbra ou sur toute autre bo&icirc;te mail</p>\r\n<p>&nbsp;- chercher le mail du binet iK ou du kessier iK</p>\r\n<p>&nbsp;- &eacute;crire un mail expliquant qu\'on veut publier un article dans l\'iK</p>\r\n<p>&nbsp;- mettre en PJ l\'article qu\'on veut mettre</p>\r\n<p>&nbsp;- recevoir une r&eacute;ponse du binet iK qui demande de corriger des fautes d\'orthographe</p>\r\n<p>&nbsp;- corriger les fautes</p>\r\n<p>&nbsp;-&nbsp; &nbsp;recommencer &agrave; partir de l\'&eacute;tape 2</p>\r\n<p>&nbsp;- ...</p>\r\n<p>&nbsp;</p>\r\n<p>C\'est long et compliqu&eacute; ! Tandis que sur le site du kI, c\'est beaucoup plus simple ! Si vous &ecirc;tes journaliste, il suffira d\'UNE SEULE &eacute;tape :</p>\r\n<p>&nbsp;- vous vous connectez ; vous cliquez sur \"&eacute;crire un article\" ; vous l\'&eacute;crivez ; vous le soumettez !</p>\r\n<p>&nbsp;</p>\r\n<p>Et si vous n\'&ecirc;tes encore que simple visiteur, pas de panique. Deux &eacute;tapes suffiront pour devenir journaliste :</p>\r\n<p>&nbsp;- se connecter</p>\r\n<p>&nbsp;- cliquer sur \"Devenir journaliste\" et suivre la proc&eacute;dure qui s\'affiche &agrave; l\'&eacute;cran</p>\r\n<p>Encore une fois, simple comme bonjour. Alors,&nbsp;<strong>n\'h&eacute;sitez plus :</strong></p>\r\n<p><span style=\"font-size: 24pt;\">DEVENEZ JOURNALISTE kI</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>', 'img_kI', 'attente', '2021-12-22 11:10:09', '2021-12-22 17:07:57', 0),
@@ -54,7 +54,8 @@ INSERT INTO `articles` (`ID`, `id_auteur`, `titre`, `contenu`, `image`, `statut`
 (18, 1, 'Titre qui pose problème', '<p>Un texte qui a l\'air innocent</p>\r\n<p>&lt;script&gt;alert(\"probl&egrave;me\")&lt;/script&gt;</p>\r\n<p>Et qui pourtant pose probl&egrave;me.</p>\r\n<p>&lt;script&gt;alert(\"Pas si simple!\");&lt;script&gt;</p>', 'img_kI', 'valide', '2022-01-14 14:33:26', '2022-01-14 14:39:17', 0),
 (19, 1, 'ENCORE DES TESTS', '<div>Coucou</div>\r\n<div>&nbsp;</div>\r\n<div>Ceci est un test.</div>\r\n<div>La grande question est: passera-t-il le validateur W3C ?</div>\r\n<div>Une autre question importante reli&eacute;e &agrave; cela : &lt;script&gt;alert(\"Qu\'avez-vous vu ?\");&lt;/script&gt;</div>\r\n<div>&nbsp;</div>\r\n<div>A +</div>', 'img_kI', 'valide', '2022-01-14 15:02:53', '2022-01-14 15:03:04', 0),
 (20, 4, 'Article', '<div>Bonjour</div>\r\n<div>J\'&eacute;cris un artcile</div>\r\n<div>Je sais pas quoi mettre !</div>\r\n<div>&nbsp;</div>\r\n<div>Au revoir</div>', 'img_kI', 'refuse', '2022-01-21 12:43:05', '2022-01-21 12:43:37', 0),
-(23, 5, 'Le PSC élu meilleur cours par les étudiants', '<div><em>[ENGLISH BELOW]</em></div>\r\n<div>&nbsp;</div>\r\n<div>Bonjour,</div>\r\n<div>&nbsp;</div>\r\n<div>Nous avons eu l\'immense honneur de nous entretenir avec *ri* *ab**ye, le pr&eacute;sident de l\'Ecole polytechnique, qui a pr&eacute;f&eacute;r&eacute; rester anonyme.</div>\r\n<div>Cette interview &eacute;tait si dense en renseignements et en information que nous avons d&eacute;cid&eacute; d\'&eacute;crire une s&eacute;rie d\'articles &agrave; ce sujet. Ceci est donc le premier d\'une&nbsp;<em>**longue, longue**</em> s&eacute;rie d\'au moins 1 article(s).</div>\r\n<div>&nbsp;</div>\r\n<div style=\"padding-left: 40px;\"><span style=\"background-color: #bfedd2;\">LE PSC ELU MEILLEUR COURS PAR LES ETUDIANTS</span></div>\r\n<div><span style=\"background-color: #ffffff;\">Les &eacute;tudiants ont &eacute;t&eacute; sond&eacute;s l\'ann&eacute;e derni&egrave;re, &agrave; l\'issue de leur soutenance de PSC. La question suivante leur a &eacute;t&eacute; adress&eacute;e :</span></div>\r\n<div><span style=\"background-color: #ffffff;\">&lt;&lt; Pensez-vous que les PSC (et vos jurys) sont ce qu\'il y a de mieux &agrave; l\'X ?&gt;&gt;</span></div>\r\n<div>Dans 95% des cas, les &eacute;tudiants ont r&eacute;pondu \"oui\". Ce pourcentage grimpe m&ecirc;me &agrave; 100% si l\'on exclu les &eacute;l&egrave;ves renvoy&eacute;s depuis.</div>\r\n<div>&nbsp;</div>\r\n<div>Les kessiers \"ens\" (<em>pour \"enseignement\", NDMDR)&nbsp;</em>ont vivement protest&eacute;. \"Je ne savais pas que le PSC &eacute;tait le cours pr&eacute;f&eacute;r&eacute; des X, on aurait pu me pr&eacute;venir\". Toutefois notre interlocuteur n\'a pas accord&eacute; de cr&eacute;dit &agrave; ces protestations, jug&eacute;es hors-sujet. D\'ailleurs, nous avons appris que leur mandat vient de se terminer.</div>\r\n<div>&nbsp;</div>\r\n<div>En revanche, chez les tuteurs, c\'est la f&ecirc;te. \"Nous avons toujours su que les &eacute;l&egrave;ves nous appr&eacute;ciaient, ils savent bien que travailler le PSC est le meilleur moyen de perdre leur temps\", nous dit un tuteur du d&eacute;partement PHY <em>(pour \"physique\", NDMDR).</em> \"Or les &eacute;tudiants aiment perdre leur temps, tout le monde sait &ccedil;a\". D\'une logique implacable, digne de cette belle discipline.</div>\r\n<div>&nbsp;</div>\r\n<div>&nbsp;</div>', 'img_9', 'valide', '2022-01-21 15:59:53', '2022-01-21 16:03:28', 0);
+(23, 5, 'Le PSC élu meilleur cours par les étudiants', '<div><em>[ENGLISH BELOW]</em></div>\r\n<div>&nbsp;</div>\r\n<div>Bonjour,</div>\r\n<div>&nbsp;</div>\r\n<div>Nous avons eu l\'immense honneur de nous entretenir avec *ri* *ab**ye, le pr&eacute;sident de l\'Ecole polytechnique, qui a pr&eacute;f&eacute;r&eacute; rester anonyme.</div>\r\n<div>Cette interview &eacute;tait si dense en renseignements et en information que nous avons d&eacute;cid&eacute; d\'&eacute;crire une s&eacute;rie d\'articles &agrave; ce sujet. Ceci est donc le premier d\'une&nbsp;<em>**longue, longue**</em> s&eacute;rie d\'au moins 1 article(s).</div>\r\n<div>&nbsp;</div>\r\n<div style=\"padding-left: 40px;\"><span style=\"background-color: #bfedd2;\">LE PSC ELU MEILLEUR COURS PAR LES ETUDIANTS</span></div>\r\n<div><span style=\"background-color: #ffffff;\">Les &eacute;tudiants ont &eacute;t&eacute; sond&eacute;s l\'ann&eacute;e derni&egrave;re, &agrave; l\'issue de leur soutenance de PSC. La question suivante leur a &eacute;t&eacute; adress&eacute;e :</span></div>\r\n<div><span style=\"background-color: #ffffff;\">&lt;&lt; Pensez-vous que les PSC (et vos jurys) sont ce qu\'il y a de mieux &agrave; l\'X ?&gt;&gt;</span></div>\r\n<div>Dans 95% des cas, les &eacute;tudiants ont r&eacute;pondu \"oui\". Ce pourcentage grimpe m&ecirc;me &agrave; 100% si l\'on exclu les &eacute;l&egrave;ves renvoy&eacute;s depuis.</div>\r\n<div>&nbsp;</div>\r\n<div>Les kessiers \"ens\" (<em>pour \"enseignement\", NDMDR)&nbsp;</em>ont vivement protest&eacute;. \"Je ne savais pas que le PSC &eacute;tait le cours pr&eacute;f&eacute;r&eacute; des X, on aurait pu me pr&eacute;venir\". Toutefois notre interlocuteur n\'a pas accord&eacute; de cr&eacute;dit &agrave; ces protestations, jug&eacute;es hors-sujet. D\'ailleurs, nous avons appris que leur mandat vient de se terminer.</div>\r\n<div>&nbsp;</div>\r\n<div>En revanche, chez les tuteurs, c\'est la f&ecirc;te. \"Nous avons toujours su que les &eacute;l&egrave;ves nous appr&eacute;ciaient, ils savent bien que travailler le PSC est le meilleur moyen de perdre leur temps\", nous dit un tuteur du d&eacute;partement PHY <em>(pour \"physique\", NDMDR).</em> \"Or les &eacute;tudiants aiment perdre leur temps, tout le monde sait &ccedil;a\". D\'une logique implacable, digne de cette belle discipline.</div>\r\n<div>&nbsp;</div>\r\n<div>&nbsp;</div>', 'img_9', 'valide', '2022-01-21 15:59:53', '2022-01-21 16:03:28', 2),
+(24, 4, 'Un brève histoire de Memix', '<div>Camarades, l\'heure est grave.</div>\r\n<div>&nbsp;</div>\r\n<div>Pour ceux qui ne le savent pas, <a title=\"Facebook - Memix\" href=\"https://www.facebook.com/groups/memix/?multi_permalinks=4876326165790436\" target=\"_blank\" rel=\"noopener\">Memix</a> est un groupe Facebook cr&eacute;&eacute; par les X en 2002. Le CEO de l\'&eacute;poque, un certain Eduardo Saverin, &eacute;tait ceinture noir d\'humour, m&ecirc;me s\'il lui &eacute;tait souvent reproch&eacute; d\'avoir un humour un peu lourd. Rapidement, le groupe a fait sensation, et pr&egrave;s de 100% des polytechniciens le rejoingnent. Au Magnan, les conversations tournent toujours autour du dernier m&ecirc;me, et plus personne ne se rendait en amphi pendant les semaines concours &agrave; th&egrave;mes.</div>\r\n<div>&nbsp;</div>\r\n<div>&nbsp;\"<em>C\'est vrai qu\'Eduardo &eacute;tait dr&ocirc;le\"</em>, se rappelle Louis Vanneau<span style=\"color: #e03e2d;\">*<span style=\"color: #000000;\">, <em>\"mais il &eacute;tait quand m&ecirc;me lourd\".&nbsp;</em>Il passait son temps libre &agrave;&nbsp;<em>\"se cacher derri&egrave;re les portes pour faire bouh\"</em> et quand il allait en PC,&nbsp;<em>\"il tapait sur le coude droit de son voisin pour le faire d&eacute;rapper. Cela faisait un grand trait au travers de la feuille de l\'infortun&eacute; voisin, et &ccedil;a l\'amusait beaucoup\"</em>. Une attitude qui nous para&icirc;t pu&eacute;rile aujourd\'hui, mais il faut savoir que ce geste &eacute;tait &agrave; l\'&eacute;poque consid&eacute;r&eacute; comme un signe de grand respect.</span></span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"color: #e03e2d;\"><span style=\"color: #000000;\">En 2004, il d&eacute;cide avec Mark Zuckerberg de fusionner son groupe avec Facebook.&nbsp;</span></span></div>\r\n<div>&nbsp;</div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"color: #e03e2d;\">*<span style=\"color: #000000;\">Les pr&eacute;noms ont &eacute;t&eacute; modifi&eacute;s</span></span></div>', 'img_10', 'valide', '2022-01-28 16:21:29', '2022-01-28 16:24:55', 1);
 
 -- --------------------------------------------------------
 
@@ -89,22 +90,8 @@ INSERT INTO `comments` (`ID`, `id_auteur`, `id_article`, `date_release`, `conten
 (16, 6, 1, '2022-01-23 15:13:45', 'pas moi. Du coup, pourquoi ?'),
 (17, 6, 1, '2022-01-23 15:13:59', 'pas moi. Du coup, pourquoi ?'),
 (18, 1, 1, '2022-01-23 15:15:05', 'Pour pouvoir naviguer dans les commentaires & voir si ça marche bien'),
-(19, 1, 1, '2022-01-23 15:47:33', 'Pour pouvoir naviguer dans les commentaires & voir si ça marche bien');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `demande_upgrade`
---
-
-CREATE TABLE `demande_upgrade` (
-  `ID` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `nom` varchar(256) NOT NULL,
-  `promo` int(11) NOT NULL,
-  `motivation` text NOT NULL,
-  `type_demande` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(19, 1, 1, '2022-01-23 15:47:33', 'Pour pouvoir naviguer dans les commentaires & voir si ça marche bien'),
+(20, 6, 23, '2022-01-28 16:19:15', 'haha trop drôle, ça parle d\'humour');
 
 -- --------------------------------------------------------
 
@@ -123,7 +110,8 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`ID`, `original_name`, `id_auteur`) VALUES
-(9, 'x logo 2.jpeg', 5);
+(9, 'x logo 2.jpeg', 5),
+(10, 'memix.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -144,7 +132,36 @@ CREATE TABLE `likes` (
 --
 
 INSERT INTO `likes` (`ID`, `id_likeur`, `id_article`, `date_like`, `nature_like`) VALUES
-(16, 1, 1, '2022-01-23 15:31:15', 0);
+(17, 1, 1, '2022-01-28 15:18:47', 0),
+(18, 6, 1, '2022-01-28 15:19:03', 0),
+(19, 6, 23, '2022-01-28 15:19:05', 0),
+(20, 4, 23, '2022-01-28 15:33:21', 0),
+(22, 1, 24, '2022-01-28 16:25:17', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `upgrade_requests`
+--
+
+CREATE TABLE `upgrade_requests` (
+  `ID` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `nom` varchar(256) NOT NULL,
+  `promo` varchar(6) NOT NULL,
+  `motivation` varchar(500) NOT NULL,
+  `type_demande` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `upgrade_requests`
+--
+
+INSERT INTO `upgrade_requests` (`ID`, `id_user`, `nom`, `promo`, `motivation`, `type_demande`) VALUES
+(3, 9, 'James Bond', 'X1900', 'Je suis très motivé pour devenir journaliste. J\'ai plein d\'idées d\'articles !', 'journaliste'),
+(4, 11, 'Ethan Hunt', 'X2050', 'Je viens du futur, j\'ai donc plein de scoops à apporter, j\'ai donc un potentiel intéressant en tant que journaliste, je pense donc que vous devriez accepter ma demande !', 'journaliste'),
+(5, 5, 'Olivier Serre', 'X1990', 'Ce site existe un peu grâce à moi, donc je devrais avoir tous les droits dessus...', 'admin'),
+(8, 6, 'JaiPasDeNom', 'X1995', 'Je suis le seul PAX à avoir renseigné sa promo. Enfin, je crois ?..', 'journaliste');
 
 -- --------------------------------------------------------
 
@@ -157,25 +174,24 @@ CREATE TABLE `users` (
   `username` varchar(256) NOT NULL,
   `password` varchar(256) NOT NULL,
   `first_date` datetime NOT NULL DEFAULT current_timestamp(),
-  `type` varchar(20) NOT NULL DEFAULT 'visiteur',
-  `type_demande` varchar(20) NOT NULL DEFAULT 'visiteur'
+  `type` varchar(20) NOT NULL DEFAULT 'visiteur'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`ID`, `username`, `password`, `first_date`, `type`, `type_demande`) VALUES
-(1, 'aminassian', '$2y$10$gafAMJML6Ct5RZ/v55BLRe8FOw0VQKWlGJcGUjAi4fMKJ6p/XKUvG', '2021-12-05 23:17:44', 'admin', 'admin'),
-(3, 'utilisateurRandom', '$2y$10$ZxDNoAVp0mEnWvGS5KyKa.Cn1IPbxwEvGoDWIFi1c4D31sohmAWDG', '2021-12-05 23:18:23', 'visiteur', 'visiteur'),
-(4, 'projet.modal', '$2y$10$gRK/AthJDwKCaHfbOujocuI6TDOZyvHgV7f4c789vCBsia9W/VcTy', '2021-12-17 15:28:46', 'journaliste', 'journaliste'),
-(5, 'projet.modal2', '$2y$10$gRK/AthJDwKCaHfbOujocuI6TDOZyvHgV7f4c789vCBsia9W/VcTy', '2021-12-17 15:33:31', 'journaliste', 'journaliste'),
-(6, 'randomX', '$2y$10$I.tbAZvxEcIc1cW1uACsEOqMCFkK2Fbjxx0nmUDm/yvKly46EMn5C', '2021-12-19 23:15:20', 'visiteur', 'journaliste'),
-(7, 'otherRandomX', '$2y$10$I.tbAZvxEcIc1cW1uACsEOqMCFkK2Fbjxx0nmUDm/yvKly46EMn5C', '2021-12-22 16:54:30', 'journaliste', 'journaliste'),
-(8, 'otherOtherRandomX', '$2y$10$I.tbAZvxEcIc1cW1uACsEOqMCFkK2Fbjxx0nmUDm/yvKly46EMn5C', '2021-12-22 16:54:30', 'visiteur', 'visiteur'),
-(9, 'randomXX', '$2y$10$I.tbAZvxEcIc1cW1uACsEOqMCFkK2Fbjxx0nmUDm/yvKly46EMn5C', '2022-01-07 16:57:12', 'visiteur', 'visiteur'),
-(10, 'antoine.dmi', '$2y$10$rorbx/x8Vdo2is7O6Fiy4u259.k66TvI95iMn8quR60r4OiyxYDR6', '2022-01-21 14:24:59', 'visiteur', 'visiteur'),
-(11, 'randomX20', '$2y$10$NKbHOBQtt6BVbRTmZg/8weomVpa6YzASSDSwf/RTqxxa5yGUokvCG', '2022-01-21 14:54:33', 'visiteur', 'visiteur');
+INSERT INTO `users` (`ID`, `username`, `password`, `first_date`, `type`) VALUES
+(1, 'aminassian', '$2y$10$gafAMJML6Ct5RZ/v55BLRe8FOw0VQKWlGJcGUjAi4fMKJ6p/XKUvG', '2021-12-05 23:17:44', 'admin'),
+(3, 'utilisateurRandom', '$2y$10$ZxDNoAVp0mEnWvGS5KyKa.Cn1IPbxwEvGoDWIFi1c4D31sohmAWDG', '2021-12-05 23:18:23', 'visiteur'),
+(4, 'projet.modal', '$2y$10$gRK/AthJDwKCaHfbOujocuI6TDOZyvHgV7f4c789vCBsia9W/VcTy', '2021-12-17 15:28:46', 'journaliste'),
+(5, 'projet.modal2', '$2y$10$gRK/AthJDwKCaHfbOujocuI6TDOZyvHgV7f4c789vCBsia9W/VcTy', '2021-12-17 15:33:31', 'journaliste'),
+(6, 'randomX', '$2y$10$I.tbAZvxEcIc1cW1uACsEOqMCFkK2Fbjxx0nmUDm/yvKly46EMn5C', '2021-12-19 23:15:20', 'visiteur'),
+(7, 'otherRandomX', '$2y$10$I.tbAZvxEcIc1cW1uACsEOqMCFkK2Fbjxx0nmUDm/yvKly46EMn5C', '2021-12-22 16:54:30', 'journaliste'),
+(8, 'otherOtherRandomX', '$2y$10$I.tbAZvxEcIc1cW1uACsEOqMCFkK2Fbjxx0nmUDm/yvKly46EMn5C', '2021-12-22 16:54:30', 'visiteur'),
+(9, 'randomXX', '$2y$10$I.tbAZvxEcIc1cW1uACsEOqMCFkK2Fbjxx0nmUDm/yvKly46EMn5C', '2022-01-07 16:57:12', 'visiteur'),
+(10, 'antoine.dmi', '$2y$10$rorbx/x8Vdo2is7O6Fiy4u259.k66TvI95iMn8quR60r4OiyxYDR6', '2022-01-21 14:24:59', 'visiteur'),
+(11, 'randomX20', '$2y$10$NKbHOBQtt6BVbRTmZg/8weomVpa6YzASSDSwf/RTqxxa5yGUokvCG', '2022-01-21 14:54:33', 'visiteur');
 
 --
 -- Index pour les tables déchargées
@@ -197,13 +213,6 @@ ALTER TABLE `comments`
   ADD KEY `id_article` (`id_article`);
 
 --
--- Index pour la table `demande_upgrade`
---
-ALTER TABLE `demande_upgrade`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `id_user` (`id_user`);
-
---
 -- Index pour la table `images`
 --
 ALTER TABLE `images`
@@ -219,6 +228,13 @@ ALTER TABLE `likes`
   ADD KEY `id_article` (`id_article`);
 
 --
+-- Index pour la table `upgrade_requests`
+--
+ALTER TABLE `upgrade_requests`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `id_user` (`id_user`);
+
+--
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
@@ -232,31 +248,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT pour la table `demande_upgrade`
---
-ALTER TABLE `demande_upgrade`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT pour la table `images`
 --
 ALTER TABLE `images`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT pour la table `upgrade_requests`
+--
+ALTER TABLE `upgrade_requests`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `users`
@@ -282,12 +298,6 @@ ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`id_article`) REFERENCES `articles` (`ID`);
 
 --
--- Contraintes pour la table `demande_upgrade`
---
-ALTER TABLE `demande_upgrade`
-  ADD CONSTRAINT `demande_upgrade_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Contraintes pour la table `images`
 --
 ALTER TABLE `images`
@@ -299,6 +309,12 @@ ALTER TABLE `images`
 ALTER TABLE `likes`
   ADD CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`id_likeur`) REFERENCES `users` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`id_article`) REFERENCES `articles` (`ID`);
+
+--
+-- Contraintes pour la table `upgrade_requests`
+--
+ALTER TABLE `upgrade_requests`
+  ADD CONSTRAINT `upgrade_requests_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
