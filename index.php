@@ -51,7 +51,6 @@ if (pageExists($askedPage)) {
  * 
  *      CHANGEMENTS MINEURS
  * Bouton de navigation pour afficher les articles suivants (main)
- * Bouton de navigation pour les commentaires (read)
  *  */
 
 
@@ -61,4 +60,5 @@ if (pageExists($askedPage)) {
  * Ajouter une photo à ses articles (write-article)
  * Espace visiteur/journalistes (voir ses likes, ses articles, les modifier) (my-space)
  * Système de like (read)
+ * Bouton de navigation pour les commentaires (read)
  */
