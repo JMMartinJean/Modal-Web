@@ -55,7 +55,7 @@ function navbar_compte() {
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="userOptions">
-                    <a class="dropdown-item" href="#" onClick="alert(\'not implemented yet\');">Paramètres</a>
+                    <a class="dropdown-item" href="index.php?page=parameters">Paramètres</a>
                     <a class="dropdown-item" href="index.php?page=unlog">Déconnexion</a>
                 </div>
             </div>';

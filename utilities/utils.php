@@ -53,6 +53,11 @@ $pageList = array(
     'my-space' => array(
         'title' => 'Le kI - Mon espace',
         'auth' => $connected,
+    ),
+    'parameters' => array(
+        'title' => 'Le kI - Paramètres du compte',
+        'auth' => $connected,
+        'script' => array('js/js_parameters.js')
     )
 );
 
