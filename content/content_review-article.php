@@ -1,6 +1,20 @@
 <?php
 
-function reviewArticle($id) {
+function lastModifyRequest($id) {
+    global $bdd;
+    $req = $bdd->prepare(
+        'SELECT * 
+        FROM modify_requests JOIN users on modify_requests.id_auteur = users.id 
+        WHERE id_article = ? 
+        ORDER BY modify_requests.id DESC');
+    $req->execute(array($id));
+    if ($req->rowCount() == 0) {
+        return 0;
+    }
+    return $req->fetch();
+}
+
+function getArticle($id) {
     global $bdd;
     $req = $bdd->prepare('
         SELECT *
@@ -10,15 +24,31 @@ function reviewArticle($id) {
 
     echo '<div class="container-fluid">';
     if ($req->rowCount() != 1) {
-        echo '<p class="errormsg">L\'article n\'existe pas.</p></div>';
+        
         return 0;
     }
     $article = $req->fetch();
     if ($article['statut'] != 'attente') {
-        echo '<p class="errormsg">L\'article n\'est pas en attente.</p></div>';
+        echo '<p class="errormsg">L\'article n\'est pas en attente et n\'a aucune modification en attente.</p></div>';
         return 0;
     }
-    echo '<p>Article posté le ' . $article['maj'] . ' par ' . $article['username'] . '</p>
+    return $article;
+}
+
+function findMetadata($id_article) {
+    $article = lastModifyRequest($id_article);
+    if ($article == 0) {
+        $article = getArticle($id_article);
+    }
+    return $article;
+}
+
+function reviewArticle($id) {
+    $article = findMetadata($id);
+    if ($article == 0) {
+        return;
+    }
+    echo '<p>Article posté par ' . $article['username'] . '</p>
         <img src="images\\' . $article['image'] . '.jpg" style="width:88px;height:59px;margin-bottom:20px">
         <form method="post" action="index.php?page=admin" id="form_validation">
             <textarea name="titre" style="width:50%; resize:horizontal">' . htmlspecialchars($article['titre']) . '</textarea>

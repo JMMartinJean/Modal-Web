@@ -56,7 +56,6 @@ function main() {
         return 0;
     }
     if (!array_key_exists('increment', $_POST) || !array_key_exists('id_article', $_POST)) {
-        addAlert(var_dump($_POST), '');
         addAlert('Données reçues incorrectes', 'error');
         return 0;
     }
