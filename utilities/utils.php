@@ -58,6 +58,15 @@ $pageList = array(
         'title' => 'Le kI - Paramètres du compte',
         'auth' => $connected,
         'script' => array('js/js_parameters.js')
+    ),
+    'edit' => array(
+        'title' => 'Le kI - Modifier un article',
+        'auth' => array('journaliste', 'admin'),
+        'script' => array(
+            '0' => 'https://cdn.tiny.cloud/1/zjkdssckeizytqdo5av8o6dm2dtceccuhey77jmblx6l0lnb/tinymce/5/tinymce.min.js" referrerpolicy="origin',
+            '1' => 'js/fr_FR.js',
+            '2' => 'js/js_write-article.js'
+        ),
     )
 );
 

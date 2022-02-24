@@ -46,7 +46,6 @@ if (pageExists($askedPage)) {
 
 /* TODO
  *      FONCTIONALITES
- * Espace compte (modifier mdp & nom d'utilisateur)
  * Page pour modifier ses articles
  * 
  *      CHANGEMENTS MINEURS
@@ -56,6 +55,7 @@ if (pageExists($askedPage)) {
 
 
 /* CHANGEMENTS RECENTS
+ * Espace compte (modifier mdp & nom d'utilisateur)
  * Espace commentaire sous les articles (read)
  * Ajouter une photo à ses articles (write-article)
  * Espace visiteur/journalistes (voir ses likes, ses articles, les modifier) (my-space)
