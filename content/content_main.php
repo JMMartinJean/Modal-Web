@@ -27,16 +27,17 @@ function generatePopulaires() {
     $rep->execute();
     while ($article = $rep->fetch()) {
         echo '
-        <div class="row articlesPop" style="border:solid gray 1px; margin-bottom: 5px">
-            <img class="col-2 imgPop" src="images/' . $article["image"] . '.JPG" alt="' . $article["image"] . '">
-            <div class="col-10" style="padding-top:5px">
-                <a class="softUnderline titrePop" href="index.php?page=read&article=' . $article["id"] . '">
-                ' . htmlspecialchars($article['titre']) . '</a>
-                <p class="contenuPop">' . substr(strip_tags($article['contenu']), 0, 130) . '... 
-                    <a href="index.php?page=read&article=' . $article["id"] . '">Lire la suite</a></p>
-            </div>
-            
-        </div>';
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Article</strong>
+          <h3 class="mb-0"> ' . htmlspecialchars($article['titre']) . ' </h3>
+          <p class="card-text mb-auto">' . substr(strip_tags($article['contenu']), 0, 130) . '...</p>
+          <a href="index.php?page=read&article=' . $article["id"] . '"> Lire l\'article</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="images/' . $article["image"] . '.JPG" alt="' . $article["image"] . '">
+        </div>
+      </div>';
     }
 }
 
@@ -56,21 +57,20 @@ function generateTous($bdd, $page) {
     while ($article = $rep->fetch()) {
         if ($nbAffiches < $nb_article_par_page) {
             echo '
-            <div class="row" style="border:solid gray 1px; margin-bottom: 5px">
-                <img class="col-2 imgTous" src="images/' . $article["image"] . '.JPG" alt="' . $article["image"] . '">
-
-                <div class="col-10">
-                    <h5>
-                        ' . htmlspecialchars($article['titre']) . '
-                    </h5>
-                    <p>
-                        ' . substr(strip_tags($article['contenu']), 0, 600) . '...
-                        <a href="index.php?page=read&article=' . $article["id"] . '"> Lire l\'article</a>
-                    </p>
-                </div>
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-primary">Article</strong>
+                <h3 class="mb-0"> ' . htmlspecialchars($article['titre']) . ' </h3>
+                <p class="card-text mb-auto">' . substr(strip_tags($article['contenu']), 0, 600) . '...</p>
+                <a href="index.php?page=read&article=' . $article["id"] . '"> Lire l\'article</a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="images/' . $article["image"] . '.JPG" alt="' . $article["image"] . '">
+              </div>
             </div>';
         }
         $nbAffiches++;
+        
     }
 
     echo '<button data-page="' . ($page - 1) . '" class="navigate"' . ($page == 0 ? 'disabled' : '') . '>Précédent</button>';
