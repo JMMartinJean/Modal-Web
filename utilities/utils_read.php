@@ -33,8 +33,9 @@ function runCore() {
     if ($article = $req->fetch()) {
         echo '<div class="container-fluid">
                     <div class="row" style="margin-bottom: 20px">';
-        article_likes($idArticle);
+        echo '<img class="col-2" src="images/' . $article['image'] . '.jpg" alt="' . $article['image'] . '">';
         article_title(htmlspecialchars($article['titre']), htmlspecialchars($article['username']), $article['last_maj']);
+        article_likes($idArticle);
         echo '      </div>';
         echo '<div class="container-fluid">' . ($article['contenu']) . '</div>';  //pas besoin de htmlspecialchars grâce au formulaire sécurisé
 

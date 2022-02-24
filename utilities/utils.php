@@ -16,6 +16,7 @@ $pageList = array(
     'main' => array(
         'title' => 'Le kI - Accueil',
         'auth' => $all,
+        'script' => array('js/js_main.js')
     ),
     'new-account' => array(
         'title' => 'Le kI - Créer un compte',
