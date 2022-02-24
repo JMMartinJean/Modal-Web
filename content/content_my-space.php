@@ -33,7 +33,7 @@ function printArticles() {
                 default:
                     echo ' [ERREUR - statut invalide]<br>';
             }
-            echo '<a href=index.php?page=edit&article=' . $article['ID'] . '">Modifier l\'article</a></li>';
+            echo '<a href="index.php?page=edit&article=' . $article['ID'] . '">Modifier l\'article</a></li>';
         }
         echo '</ul>';
     }

@@ -32,13 +32,29 @@ function validateArticle_aux($id, $titre, $contenu, $newstatut) {
 
 function do_changeArticleStatus($idArticle, $titre, $contenu, $newstatut) {
     if (is_numeric($idArticle) && ($newstatut == 'refuse' || $newstatut == "valide")) {
-        validateArticle_aux(intval($idArticle), $titre, $contenu, $newstatut);
-        if ($newstatut == "valide") {
-            addAlert('Article publié !', 'success');
-        } else {
-            addAlert('Article rangé à la poubelle.', 'success');
+        global $bdd;
+        
+        //On vérifie s'il s'agit d'une modification à refuser
+        $req = $bdd->prepare('DELETE FROM modify_requests WHERE id_article = ?');
+        $req->execute(array($idArticle));
+        if ($req->rowCount() > 0) {
+            if ($newstatut === "valide") {
+                validateArticle_aux(intval($idArticle), $titre, $contenu, $newstatut);
+                addAlert('Modification validée !', 'success');
+            } else {
+                addAlert('Modification supprimée.', 'success');
+            }
+            return 1;
         }
-        return 1;
+        else { // Sinon, alors il s'agissait d'une demande de publication
+            validateArticle_aux(intval($idArticle), $titre, $contenu, $newstatut);
+            if ($newstatut === "valide") {
+                addAlert('Article publié !', 'success');
+            } else {
+                addAlert('Article rangé à la poubelle.', 'success');
+            }
+            return 1;
+        }
     } else {
         addAlert('Les informations reçues sont incorrectes', 'error');
         return 0;
@@ -59,5 +75,6 @@ function runCore() {
     echo '<div class="container-fluid">';
     usersToUpgrade();
     articlesToReview();
+    articlesToModify();
     echo '</div>';
 }

@@ -3,10 +3,12 @@
 require('content/content_write-article.php');
 
 function checkAuth_edit() {
+    //Vérifie qu'on est connecté
     if (!isLoggedIn() || !array_key_exists('article', $_GET)) {
         return array(false, '', '');
     }
-
+    
+    //Vérifie qu'on est bien l'auteur de l'article dont l'ID est dans le GET
     global $bdd;
     $req = $bdd->prepare("SELECT titre, contenu, id_auteur FROM articles WHERE ID = ?");
     $req -> execute(array($_GET['article']));
@@ -21,10 +23,10 @@ function checkAuth_edit() {
     return array(false, '', '');
 }
 
-function display_edit($titre, $contenu) {
-    generateForm_writearticle($titre, $contenu);
+function display_edit($titre, $contenu, $id_article) {
+    generateForm_writearticle($titre, $contenu, 'edit&article=' . $id_article);
 }
 
 function display_error() {
-    echo '<div class="container-fluid"><h1>Erreur</h1><p>Vous essayez d\'accéder à une page inexistante ou interdite.<br><a href = "index.php">Retour en lien sûr</a></p></div>';
+    echo '<div class="container-fluid"><h1>Erreur</h1><p>Vous essayez d\'accéder à une page inexistante ou interdite.<br><a href = "index.php">Retour en lieu sûr</a></p></div>';
 }

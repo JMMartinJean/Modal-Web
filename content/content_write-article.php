@@ -1,8 +1,8 @@
 <?php
 
-function generateForm_writearticle($def_titre, $def_contenu) {
+function generateForm_writearticle($def_titre, $def_contenu, $target) {
     echo '<div class="container-fluid">
-    <form method="post" action="index.php?page=write-article" enctype="multipart/form-data">
+    <form method="post" action="index.php?page=' . $target . '" enctype="multipart/form-data">
         <textarea name="titre" placeholder="Titre de votre article" style="width:50%; resize:horizontal">' . $def_titre . '</textarea>
         <br> <br>
         <label>Choisissez une image pour illustrer votre article:</label><br>

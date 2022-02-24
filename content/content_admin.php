@@ -48,3 +48,21 @@ function articlesToReview() {
         echo '</ul></div>';
     }
 }
+
+function articlesToModify() {
+    global $bdd;
+    $req = $bdd->prepare('
+        SELECT id_article, username, titre
+        FROM modify_requests JOIN users ON modify_requests.id_auteur = users.id');
+    $req->execute();
+    if ($req->rowCount() == 0) {
+        echo '<p style="color:green"><em>Aucun article en attente de modification</em></p>';
+    } else {
+        echo '<div>Liste des demandes de modification:<ul>';
+        while ($article = $req->fetch()) {
+            echo '<li><b>' . htmlspecialchars($article['titre']) . '</b> (par ' . htmlspecialchars($article['username']) . ') - ';
+            echo '<a href="index.php?page=review-article&id=' . $article['id_article'] . '">Voir les modifications</a></li>';
+        }
+        echo '</ul></div>';
+    }
+}
