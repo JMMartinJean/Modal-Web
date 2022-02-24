@@ -40,29 +40,45 @@ function generatePopulaires() {
     }
 }
 
-function generateTous() {
-    global $bdd;
-    $rep = $bdd->prepare('SELECT id, titre, image, contenu FROM articles WHERE statut = "valide" ORDER BY parution DESC LIMIT 20');
-    $rep->execute();
-    while ($article = $rep->fetch()) {
-        echo '
-        <div class="row" style="border:solid gray 1px; margin-bottom: 5px">
-            <img class="col-2 imgTous" src="images/' . $article["image"] . '.JPG" alt="' . $article["image"] . '">
-            
-            <div class="col-10">
-                <h5>
-                    ' . htmlspecialchars($article['titre']) . '
-                </h5>
-                <p>
-                    ' . substr(strip_tags($article['contenu']), 0, 600) . '...
-                    <a href="index.php?page=read&article=' . $article["id"] . '"> Lire l\'article</a>
-                </p>
-            </div>
-        </div>';
+function generateTous($bdd, $page) {
+    $nb_article_par_page = 6;
+    $offset = 0;
+    if (is_int($page) && $page > 0) {
+        $offset = $nb_article_par_page * $page;
     }
+
+    $rep = $bdd->prepare('SELECT id, titre, image, contenu FROM articles '
+            . 'WHERE statut = "valide" '
+            . 'ORDER BY parution DESC '
+            . 'LIMIT ' . ($nb_article_par_page + 1) . ' OFFSET ' . $offset);
+    $rep->execute();
+    $nbAffiches = 0;
+    while ($article = $rep->fetch()) {
+        if ($nbAffiches < $nb_article_par_page) {
+            echo '
+            <div class="row" style="border:solid gray 1px; margin-bottom: 5px">
+                <img class="col-2 imgTous" src="images/' . $article["image"] . '.JPG" alt="' . $article["image"] . '">
+
+                <div class="col-10">
+                    <h5>
+                        ' . htmlspecialchars($article['titre']) . '
+                    </h5>
+                    <p>
+                        ' . substr(strip_tags($article['contenu']), 0, 600) . '...
+                        <a href="index.php?page=read&article=' . $article["id"] . '"> Lire l\'article</a>
+                    </p>
+                </div>
+            </div>';
+        }
+        $nbAffiches++;
+    }
+
+    echo '<button data-page="' . ($page - 1) . '" class="navigate"' . ($page == 0 ? 'disabled' : '') . '>Précédent</button>';
+    echo '<button data-page="' . ($page + 1) . '" class="navigate"' . ($nbAffiches <= $nb_article_par_page ? 'disabled' : '') . '>Suivant</button>';
 }
 
 function generateMainPage() {
+    global $bdd;
     echo '
 <div class="container-fluid">
     <div class="row" id = "main_top">
@@ -80,7 +96,7 @@ function generateMainPage() {
     </div>
     <div class="container" id = "main_all">
         <h3>&nbsp;&nbsp;Tous les articles</h3>';
-    generateTous();
+    generateTous($bdd, 0);
     echo '
     </div>
 </div>';

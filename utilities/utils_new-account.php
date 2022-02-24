@@ -9,7 +9,7 @@ function createAccount($username, $passw) {
     } else if (!preg_match('/^(?:[a-zA-Z0-9]|\.|_|-){1,30}$/', $username)) {//Le username n'est pas valide
         addAlert('Le nom d\'utilisateur ne peut contenir que des caractères alphanumériques (non accentués), et les caractères "." , "_" et "-". <br> Il doit aussi être de longueur <= 30', 'error');
     } else {//Tout est valide
-        $req = $bdd->prepare('INSERT INTO users (ID, username, password, first_date, type, type_demande) VALUES (NULL, ?, ?, CURRENT_TIMESTAMP, \'visiteur\', \'visiteur\')');
+        $req = $bdd->prepare('INSERT INTO users (ID, username, password, first_date, type) VALUES (NULL, ?, ?, CURRENT_TIMESTAMP, \'visiteur\')');
         $req->execute(array($username, password_hash($passw, PASSWORD_DEFAULT)));
         addAlert('Compte créé avec succès', 'success');
         $_SESSION['username'] = $username;

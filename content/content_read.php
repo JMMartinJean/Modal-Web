@@ -18,7 +18,7 @@ function ErrorMsgOnPost() {
 
 function article_title($titre, $username, $last_maj) {
     echo <<<FIN_TITRE
-    <div class="col-10">
+    <div class="col-8">
         <h1> $titre </h1>
         <h6><em> Par  $username - le $last_maj </em></h6>
     </div>
@@ -62,8 +62,6 @@ FIN_FORM;
 
 function generateComments($bdd, $idArticle, $page) { //!\ CETTE FONCTION PREND $bdd EN PARAMETRES CAR ELLE SERA APPELLEE DYNAMIQUEMENT
     $nb_comms_par_page = 5;
-    
-    echo '<div class="container-fluid" style="margin-top:20px" id="commentaires">';
     $offset = 0;
     if (is_int($page) && $page > 0) {
         $offset = $nb_comms_par_page*$page;
@@ -73,10 +71,12 @@ function generateComments($bdd, $idArticle, $page) { //!\ CETTE FONCTION PREND $
             . "FROM comments JOIN users ON users.id = comments.id_auteur "
             . "WHERE comments.id_article = ? "
             . "ORDER BY date_release ASC "
-            . "LIMIT 11 OFFSET " . $offset); //LIMIT 11 pour en prendre 1 après (sous reserve d'existence)
-                                             //Malheureusement OFFSET ne peut pas être suivi d'un '?'
+            . "LIMIT " . ($nb_comms_par_page+1) . " OFFSET " . $offset); //LIMIT ($nb + 1) pour en prendre 1 après (sous reserve d'existence)
+                                             //et malheureusement, LIMIT et OFFSET ne peut pas être suivi d'un '?
     $req->execute(array($idArticle));
     $nb_comms = $req->rowCount();
+    
+    echo '<div class="container-fluid" style="margin-top:20px" id="commentaires">';
     if ($nb_comms == 0) {
         echo '
         <p><em>Il n\'y a pas de commentaire pour l\'instant. <br>

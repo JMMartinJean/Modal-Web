@@ -24,7 +24,7 @@ function checkAuth_edit() {
 }
 
 function display_edit($titre, $contenu, $id_article) {
-    generateForm_writearticle($titre, $contenu, 'edit&article=' . $id_article);
+    generateForm_writearticle($titre, htmlspecialchars($contenu), 'edit&article=' . $id_article);
 }
 
 function display_error() {
