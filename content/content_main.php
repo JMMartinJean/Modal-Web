@@ -78,7 +78,7 @@ function generateTrois() {
 function generatePopulaires() {
     global $bdd;
 
-    $rep = $bdd->prepare('SELECT id, titre, contenu, image FROM articles WHERE statut = "valide" ORDER BY parution DESC, nb_like ASC LIMIT 5');
+    $rep = $bdd->prepare('SELECT id, titre, contenu, image FROM articles WHERE statut = "valide" ORDER BY parution DESC, nb_like ASC LIMIT 3');
     $rep->execute();
     while ($article = $rep->fetch()) {
         echo '
