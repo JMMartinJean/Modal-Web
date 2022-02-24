@@ -2,7 +2,7 @@
 
 function checkTimeIntervall() {
     //bloc if a activer pour le dev
-    if ($_SESSION['usertype'] == 'admin') {
+    if (!false && $_SESSION['usertype'] == 'admin') {
         return true;
     }
 
@@ -92,6 +92,7 @@ function runBefore() {
 function runCore() {
     if (array_key_exists('article_soumis', $_SESSION) && $_SESSION['article_soumis']) {
         require('content/content_my-space.php');
+        unset($_SESSION['article_soumis']);
         if ($_SESSION['usertype'] != 'admin') {
             printUpgrade();
         }
@@ -106,6 +107,7 @@ function runCore() {
         }
         if (array_key_exists('contenu', $_POST)) {
             $def_contenu = htmlspecialchars($_POST['contenu']);
+            var_dump($def_contenu);
         }
 
         generateForm_writearticle($def_titre, $def_contenu);

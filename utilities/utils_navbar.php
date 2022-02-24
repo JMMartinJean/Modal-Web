@@ -11,15 +11,15 @@ TITRE_FIN;
 }
 
 function navbar_accueil() {
-    echo '<li class="nav-item mini-item-navbar">
+    echo '<li class="nav-item mini-item-navbar navbarperso">
             <a class="nav-link active" aria-current="page" href="index.php"> Accueil </a>
          </li>';
 }
 
 function navbar_action($pageCible, $description) {
     echo <<<FIN_ACTION
-        <li class="nav-item mini-item-navbar">
-            <a class="nav-link softLink" aria-current="page" href="index.php?page=$pageCible">$description</a>
+        <li class="nav-item mini-item-navbar navbarperso">
+            <a class="nav-link" aria-current="page" href="index.php?page=$pageCible">$description</a>
         </li>
 FIN_ACTION;
 }
