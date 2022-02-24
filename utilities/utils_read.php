@@ -37,8 +37,12 @@ function runCore() {
         article_title(htmlspecialchars($article['titre']), htmlspecialchars($article['username']), $article['last_maj']);
         article_likes($idArticle);
         echo '      </div>';
-        echo '<div class="container-fluid">' . ($article['contenu']) . '</div>';  //pas besoin de htmlspecialchars grâce au formulaire sécurisé
-
+        //echo '<div class="container-fluid">' . ($article['contenu']) . '</div>';  //pas besoin de htmlspecialchars grâce au formulaire sécurisé
+        echo '<div class="card">
+                <div class="card-body">
+                    ' . ($article['contenu']) . '
+                </div>
+              </div>';
         echo '</div>';
         echo '<div class="container-fluid" style="margin-top:40px">';
         echo '<h2>Commentaires</h2>';
