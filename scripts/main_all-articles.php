@@ -10,6 +10,7 @@ function main() {
         echo 'ERROR : invalid POST argument';
         return 0;
     }
+    echo '<h3>&nbsp;&nbsp;Tous les articles</h3>';
     generateTous($bdd, intval($_POST['page']));
 }
 
